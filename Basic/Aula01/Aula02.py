@@ -20,6 +20,8 @@ print(str(17.18))
 print(type(str(17.18)))
 val = 50 + 5
 print("The value is "+str(val))
+Car = "xyz"
+print(Car)
 
 
 
