@@ -1,8 +1,13 @@
-s = int(input("Informe os segundos: "))
+idade_em_dias = int(input("Digite a idade em dias: "))
 
-minutos = s//60
-horas = minutos//60
-minutos= minutos % 60
-s = s % 60
+# Calcula anos, meses e dias
+anos = idade_em_dias // 365
+idade_em_dias %= 365
 
-print(horas,":", minutos,":",s)
+meses = idade_em_dias // 30
+idade_em_dias %= 30
+
+dias = idade_em_dias
+
+# Exibe o resultado
+print(f"{anos} anos, {meses} meses e {dias} dias.")
