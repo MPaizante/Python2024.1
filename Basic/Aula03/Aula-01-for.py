@@ -19,3 +19,16 @@ def fibonacci(n):
 n = 30
 fibonacci_sequence = fibonacci(n)
 print(f"Fibonacci Sequence ({n} numbers): {fibonacci_sequence}")
+
+
+
+
+
+addition_str = "2+5+10+20"
+
+
+numbers = [int(num) for num in addition_str.split("+")]
+
+sum_val = sum(numbers)
+
+print("Sum of numbers:", sum_val)

@@ -1,13 +1,20 @@
-idade_em_dias = int(input("Digite a idade em dias: "))
 
-# Calcula anos, meses e dias
-anos = idade_em_dias // 365
-idade_em_dias %= 365
+ #pip --pre install Pillow 
 
-meses = idade_em_dias // 30
-idade_em_dias %= 30
 
-dias = idade_em_dias
 
-# Exibe o resultado
-print(f"{anos} anos, {meses} meses e {dias} dias.")
+
+
+
+addition_str = "2+5+10+20"
+sum_val = 0
+addition_str = addition_str.split("+")
+y = int(addition_str)
+
+print(addition_str)
+for x in y:
+    print(x)
+
+
+
+print(sum_val)
