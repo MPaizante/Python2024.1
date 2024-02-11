@@ -1,27 +1,22 @@
-
- #pip --pre install Pillow 
-
-
 import turtle
+import _tkinter
+wn = turtle.Screen()
 
-# Set up the turtle
-t = turtle.Turtle()
-turtle.bgcolor("black")
-t.speed(0)  # Set the turtle's speed to draw super fast with no animation
+amy = turtle.Turtle()
+amy.pencolor("Pink")
+amy.forward(50)
+if amy.pencolor() == "Pink":
+    amy.right(60)
+    amy.forward(100)
+else:
+    amy.left(60)
+    amy.forward(100)
 
-# Define colors
-colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
-
-# Draw a colorful spiral
-for _ in range(200):
-    t.pencolor(colors[_ % 7])  # Cycle through colors
-    t.forward(_)
-    t.left(51)
-
-# Hide the turtle
-t.hideturtle()
-
-# Keep the window open
-turtle.done()
-
-
+kenji = turtle.Turtle()
+kenji.forward(60)
+if kenji.pencolor() == "Pink":
+    kenji.right(60)
+    kenji.forward(100)
+else:
+    kenji.left(60)
+    kenji.forward(100)
