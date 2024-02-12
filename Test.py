@@ -1,10 +1,13 @@
-rainfall_mi = "1.65, 1.46, 2.05, 3.03, 3.35, 3.46, 2.83, 3.23, 3.5, 2.52, 2.8, 1.85"
+sentence = "python is a high level general purpose programming language that can be applied to many different classes of problems."
 
-rainfall_list = rainfall_mi.split(', ')
+x = sentence.split()
 
-rainfall_floats = [float(value) for value in rainfall_list]
+num_a_or_e = 0
 
-# Count the number of values greater than 3.0
-num_rainy_months = sum(value > 3.0 for value in rainfall_floats)
+for s in x:
+    for a in s:
+        if a =="a" or a =="e":
+            num_a_or_e +=1
+            break
 
-print(num_rainy_months)
+print(num_a_or_e)
