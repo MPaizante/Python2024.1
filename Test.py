@@ -1,13 +1,12 @@
-sentence = "python is a high level general purpose programming language that can be applied to many different classes of problems."
+s = "singing in the rain and playing in the rain are two entirely different situations but both can be fun"
 
-x = sentence.split()
+num_vowels = 0
+a = s.split()
+vowels = ['a','e','i','o','u']
 
-num_a_or_e = 0
+for x in s:
+    if x in vowels:
+        num_vowels +=1
 
-for s in x:
-    for a in s:
-        if a =="a" or a =="e":
-            num_a_or_e +=1
-            break
+print(num_vowels)
 
-print(num_a_or_e)
