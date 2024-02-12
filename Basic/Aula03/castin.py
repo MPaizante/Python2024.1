@@ -1,10 +1,10 @@
-sentence = "students flock to the arb for a variety of outdoor activities such as jogging and picnicking"
+items = ["whirring", "wow!", "calendar", "wry", "glass", "", "llama","tumultuous","owing"]
+acc_num = 0
 
-x = sentence.split()
-same_letter_count = []
-for s in x:
-    if s[0] == s[-1]:
-        same_letter_count.append(s)
+for i in items:
+    for x in i:
+        if x == "w":
+            acc_num += 1
+            break
 
-same_letter_count = len(same_letter_count)
-print(same_letter_count)
+print(acc_num)
