@@ -1,7 +1,11 @@
-words = ["water", "chair", "pen", "basket", "hi", "car"]
-num_words = 0
-for list in words:
-    if len(list) > 3:
-        num_words += 1
+words = ["adopt", "bake", "beam", "confide", "grill", "plant", "time", "wave", "wish"]
+past_tense = []
 
-print(num_words)
+for word in words:
+    if word[-1] == "e":
+       past_tense.append(word + "d")
+    else:
+        past_tense.append(word +"ed")
+
+print(past_tense)
+    
