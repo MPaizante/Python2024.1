@@ -1,8 +1,8 @@
-entrada = str(input("Entrada: ").lower())
+entrada = str(input("Entrada: ").upper())
 frases = int(input("Quantas frases você quer botar? :"))
 lista = []
 for y in range(frases):
-    texto = str(input("Texto: ").lower())
+    texto = str(input("Texto: ").upper())
     texto = texto.split()
     lista += texto 
 
