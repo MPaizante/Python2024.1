@@ -17,5 +17,5 @@ for i in x:
         if u not in char_d:
             char_d[u] = 0
         char_d[u] += 1
-        
+
 print(char_d)
