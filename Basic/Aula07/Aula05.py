@@ -20,3 +20,14 @@ def square(x):
 n = 5
 result = square(n)
 print(result)
+
+def square(x):
+    return x*x
+
+def g(y):
+    return y + 3
+
+def h(y):
+    return square(y) + 3
+
+print(g(h(2)))
