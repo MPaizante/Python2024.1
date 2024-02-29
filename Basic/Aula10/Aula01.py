@@ -23,3 +23,29 @@ def ab(x):
 l2 = sorted(l1,key=ab)
 print(l2)
 print(sorted(l1,reverse= True, key= ab))
+
+print('-----------------------------------------')
+
+
+
+# Function to get the second letter of a string
+def second_let(s):
+    if len(s) >= 2:
+        return s[1]
+    else:
+        return ''
+
+
+# Function to get the last character of a string
+def last_char(s):
+    return s[-1]
+
+# Given list of strings
+nums = ['1450', '33', '871', '19', '14378', '32', '1005', '44', '8907', '16']
+
+# Sorting the list by the last digit using the last_char function
+nums_sorted = sorted(nums, key=last_char, reverse=True)
+
+# Displaying the sorted list
+print(nums_sorted)
+
