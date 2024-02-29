@@ -25,4 +25,9 @@ def waste( mar,var = "Water", marble = "type"):
     final_string = var + " " + marble + " " + mar
     return final_string
 
+print(type(waste))
+l= lambda x :x -1
+print(l(10))
 
+last =  lambda  s: s[-1]
+print(last([1,2]))
