@@ -2,7 +2,6 @@ ler = int(input("Quantos numeros você quer ler: "))
 
 valor = 0
 lista = []
-x = 1
 for x in range(1,ler+1):
     entrada = int(input(f"Digite o {x}º valor: "))
     valor += entrada
