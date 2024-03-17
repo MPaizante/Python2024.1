@@ -20,3 +20,4 @@ class P():
         return self.y
 
 po = P(10,100)
+print(po.x)
