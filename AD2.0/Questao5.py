@@ -24,7 +24,7 @@ def subprograma_inversoes(lista):#subprograma questao C
         for j in range( i +1, len(lista)):
             if lista[i] > lista[j]:
                 cont += 1
-                inversoes.append((i,j))
+                inversoes.append((i+1,j+1))
 
     return print(f'Há {cont} inversões, e as posições são: {inversoes}')#Saida C
 subprograma_inversoes(lista)#Execucao C
