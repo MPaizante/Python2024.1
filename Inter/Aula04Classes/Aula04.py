@@ -18,3 +18,5 @@ for c in citytuples:
     cities.append(citys)
 
 print(cities)
+
+print('='*60)
