@@ -22,14 +22,17 @@ class Fruit:
     def __init__(self, name, price):
         self.n = name
         self.p = price
-    def sort(self):
+    def sorty(self):
         return self.p
 l = [
-    Fruit('Herry', 18),
+    Fruit('Cherry', 18),
     Fruit('Apple', 5),
     Fruit('Bluebbery', 20)
 ]
-print(sorted(l, key=Fruit.sort))
+print(sorted(l, key=Fruit.sorty))
 
-for f in sorted(l,key=Fruit.sort):
+for f in sorted(l,key=Fruit.sorty):
+    print(f.n, f.p)
+print('----------------------------------------')
+for f in sorted(l, key=lambda x: x.sorty()):
     print(f.n)
