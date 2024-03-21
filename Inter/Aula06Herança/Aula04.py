@@ -1,4 +1,6 @@
 
+
+
 class Pokemon(object):
     attack = 12
     defense = 10
@@ -55,5 +57,23 @@ class Grass_Pokemon(Pokemon):
 
     def moves(self):
         self.p_moves = ["razor leaf", "synthesis", "petal dance"]
+
+    def attack_up(self):
+        if self.level >= 10:
+            self.attack = self.attack + self.attack_boost
+        return self.attack
+# Create instance with name "Bulby"
+p2 = Pokemon("Bulby")
+
+# Create instance with name "Pika"
+p3 = Grass_Pokemon("Pika")
+
+# Train p3 instance until it reaches at least level 10
+while p3.level < 10:
+    p3.train()
+
+# Print the details of p3
+print(p3)
+
 
 
