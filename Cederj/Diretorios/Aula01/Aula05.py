@@ -21,3 +21,15 @@ for i in s1:
     else:
         counts[i] += 1
 print(counts)
+
+
+def total(x):
+    tot = 0
+    for i in x:
+        tot += i
+    return tot
+
+
+def count(x):
+    tot = len(x)
+    return tot
