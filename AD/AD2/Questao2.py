@@ -15,31 +15,21 @@ def verificar_acertos(apostadores, numeros_sorteados):
         acertos = len(numeros_apostados.intersection(numeros_sorteados))
         acertadores[acertos].add(nome)
     return acertadores
-
 def main():
-
     nome_arquivo = input("Digite o nome do arquivo de apostas: ")
     numeros_sorteados = set(map(int, input("Digite os números sorteados separados por espaço: ").split()))
-
-
     apostadores = ler_arquivo(nome_arquivo)
-
     if not apostadores:
         print("Nenhuma Aposta!!!")
         return
-
     acertadores = verificar_acertos(apostadores, numeros_sorteados)
-
     total_apostas = len(apostadores)
     print("Total de apostas:", total_apostas)
-
-
     for acertos in range(8, 2, -1):
         if acertadores[acertos]:
             print(f"{acertos} acertos:", sorted(acertadores[acertos]))
         else:
             print(f"{acertos} acertos: Nenhum acertador")
-
     if not any(acertadores.values()):
         print("ACUMULOU TUDO")
 
