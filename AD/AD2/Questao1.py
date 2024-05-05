@@ -38,4 +38,5 @@ ordem = ''
 for i in ordenar_lista(lista):
     ordem += str(i) +" "
 print(f'Ordem crescente: {ordem}')
+arquivo.close()
 
