@@ -25,13 +25,13 @@ def ordenar_lista(lista):
 
 
 
-entrada = input("Entrada: ")
+entrada = input("Entrada: ") #Entrada onde colocamos o texto
 print(f"Conteúdo em {entrada}:")
-with open(entrada, 'r') as arquivo:
+with open(entrada, 'r') as arquivo:#Abre o texto
     texto = arquivo.read()
-    print(texto)
-x = texto.split()
-lista = [float(num) for num in x]
+    print(texto)#Conteudo do texto
+x = texto.split()#Faz o conteudo virar uma lista
+lista = [float(num) for num in x]#converte para float a lista
 print(f'Media dos numeros em {entrada}: é {media(lista)}')
 print(f'Quantidade Acima de {media(lista)} em {entrada}: {acima_valor(lista)}')
 ordem = ''
