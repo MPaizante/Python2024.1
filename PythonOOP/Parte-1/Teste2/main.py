@@ -10,3 +10,11 @@ carrinho.inserir_produto(p1)
 
 carrinho.lista_produto()
 print(carrinho.soma_total())
+print('--------------------------------------------------')
+cliente1 = classes.Cliente('Luiz',32)
+cliente1.insere_endereco('Rio de Janeiro','RJ')
+cliente2 = classes.Cliente('Carlos',44)
+cliente2.insere_endereco('Rio das Ostras','RJ')
+print(cliente2._nome)
+
+cliente2.lista_endereco()
