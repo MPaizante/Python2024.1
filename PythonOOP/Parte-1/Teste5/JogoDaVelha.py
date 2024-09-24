@@ -53,11 +53,55 @@ def cpuJoga():
             while velha[linha][coluna] != " ":
                 linha = random.randrange(0, 3)
                 coluna = random.randrange(0, 3)
-            velha[linha][coluna] = "0"
+            velha[linha][coluna] = "O"
             jogadas += 1
             quemJoga = 2
         except :
             print('Invalido!!!')
+def verifica():
+    global velha
+    vitoria = 'n'
+    simbolos = ['X','O']
+    for s in simbolos:
+        vitoria = 'n'
+        indiceLinhas = indiceColunas = 0
+        while indiceLinhas < 3:
+            soma = 0
+            indiceColunas = 0
+            while indiceColunas < 3:
+                if(velha[indiceLinhas][indiceColunas] == s):
+                    soma += 1
+                indiceColunas += 1
+            indiceLinhas += 1
+            if(soma == 3):
+                vitoria = s
+                break
+        if (vitoria != 'n'):
+            break
+    for s in simbolos:
+        vitoria = 'n'
+        indiceLinhas = indiceColunas = 0
+        while indiceColunas < 3:
+            soma = 0
+            indiceLinhas = 0
+            while indiceColunas < 3:
+                if(velha[indiceLinhas][indiceColunas] == s):
+                    soma += 1
+                indiceColunas += 1
+            indiceColunas += 1
+            if(soma == 3):
+                vitoria = s
+                break
+
+
+
+
+
+
+
+
+
+
 
 while True:
     tela()
