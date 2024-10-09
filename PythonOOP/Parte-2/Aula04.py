@@ -41,28 +41,28 @@ class Application():
 
         #############Label e entrada do CODIGO!!!!!!!!!!!!!!!!!
 
-        self.lb_codigo = Label(self.frames1, text="Código")
+        self.lb_codigo = Label(self.frames1, text="Código", bg='white')
         self.lb_codigo.place(relx = 0.05 , rely = 0.05)
 
         self.codigo_entry = Entry(self.frames1)
         self.codigo_entry.place(relx = 0.05 , rely = 0.15, relwidth = 0.1 ,relheight = 0.08)
 
         #############Label e entrada do NOME!!!!!!!!!!!!!!!!!
-        self.lb_nome = Label(self.frames1, text="Nome")
+        self.lb_nome = Label(self.frames1, text="Nome", bg='white', fg= '#107db2')
         self.lb_nome.place(relx=0.05, rely=0.35)
 
         self.nome_entry = Entry(self.frames1)
         self.nome_entry.place(relx=0.05, rely=0.45, relwidth=0.85, relheight=0.08)
 
         #############Label e entrada do Telefone!!!!!!!!!!!!!!!!!
-        self.lb_telefone = Label(self.frames1, text="Telefone")
+        self.lb_telefone = Label(self.frames1, text="Telefone", bg='white', fg= '#107db2')
         self.lb_telefone.place(relx=0.05, rely=0.6)
 
         self.telefone_entry = Entry(self.frames1)
         self.telefone_entry.place(relx=0.05, rely=0.7, relwidth=0.4, relheight=0.08)
 
         #############Label e entrada do Cidade!!!!!!!!!!!!!!!!!
-        self.lb_cidade = Label(self.frames1, text="Cidade")
+        self.lb_cidade = Label(self.frames1, text="Cidade", bg='white', fg= '#107db2')
         self.lb_cidade.place(relx=0.5, rely=0.6)
 
         self.cidade_entry = Entry(self.frames1)
