@@ -4,7 +4,7 @@ import sqlite3
 root = Tk()
 
 class Funcs():
-    def limpa_tela(self):
+    def limpa_cliente(self):
         self.codigo_entry.delete(0,END)
         self.nome_entry.delete(0,END)
         self.fone_entry.delete(0,END)
@@ -24,6 +24,55 @@ class Funcs():
         self.conn.commit()
         print("Banco de Dados Criado")
         self.desconecta_bd()
+    def variaveis(self):
+        self.codigo = self.codigo_entry.get()
+        self.nome = self.nome_entry.get()
+        self.fone = self.fone_entry.get()
+        self.cidade = self.cidade_entry.get()
+    def add_cliente(self):
+        self.variaveis()
+        self.conecta_bd()
+
+        self.cursor.execute("""
+        INSERT INTO clientes ( nome_cliente, telefone, cidade )
+        VALUES( ? , ? , ?);
+        """, (self.nome,self.fone,self.cidade))
+
+        self.conn.commit()
+        self.desconecta_bd()
+        self.select_lista()
+        self.limpa_cliente()
+    def select_lista(self):
+        self.listaCli.delete(*self.listaCli.get_children())
+        self.conecta_bd()
+        lista = self.cursor.execute("""SELECT cod, nome_cliente, telefone, cidade FROM clientes ORDER BY nome_cliente ASC; """)
+
+        for i in lista:
+            self.listaCli.insert("",END, values = i)
+        self.desconecta_bd()
+    def OnDoubleClick(self):
+        self.limpa_cliente()
+        self.listaCli.selection()
+
+        for n in self.listaCli.selection():
+            col1 , col2, col3, col4 =  self.listaCli.item(n , 'values')
+            self.codigo_entry.insert(END, col)
+            self.nome_entry.insert(END, col2)
+            self.fone_entry.insert(END,col3)
+            self.cidade_entry.insert(END,col4)
+    def deleta_cliente(self,event):
+        self.variaveis()
+        self.conecta_bd()
+        self.cursor.execute("""DELETE FROM clientes WHERE cod = ?""",(self.codigo))
+        self.conn.commit()
+
+
+        self.desconecta_bd()
+        self.limpa_cliente()
+        self.select_lista()
+
+
+
 class Aplication(Funcs):
     def __init__(self):
         self.root = root
@@ -32,6 +81,8 @@ class Aplication(Funcs):
         self.widgets_frame1()
         self.lista_frame2()
         self.montaTabelas()
+        self.select_lista()
+
         root.mainloop()
 
     def tela(self):
@@ -49,7 +100,7 @@ class Aplication(Funcs):
 
     def widgets_frame1(self):
         #Botão Limpar
-        self.bt_limpar = Button(self.frame_1 , text="Limpar", bd= 3, bg='#4285f4',fg='white',font=('times new roman',12,'bold'),command= self.limpa_tela)
+        self.bt_limpar = Button(self.frame_1 , text="Limpar", bd= 3, bg='#4285f4',fg='white',font=('times new roman',12,'bold'),command= self.limpa_cliente)
         self.bt_limpar.place(relx = 0.2, rely = 0.1 , relwidth = 0.1 , relheight = 0.15)
 
         # Botão Buscar
@@ -57,7 +108,7 @@ class Aplication(Funcs):
         self.bt_buscar.place(relx=0.3, rely=0.1, relwidth=0.1, relheight=0.15)
 
         # Botão Novo
-        self.bt_novo = Button(self.frame_1, text="Novo", bd= 3, bg='#4285f4',fg='white',font=('times new roman',12,'bold'))
+        self.bt_novo = Button(self.frame_1, text="Novo", bd= 3, bg='#4285f4',fg='white',font=('times new roman',12,'bold'),command= self.add_cliente)
         self.bt_novo.place(relx=0.6, rely=0.1, relwidth=0.1, relheight=0.15)
 
         # Botão Alterar
@@ -117,6 +168,8 @@ class Aplication(Funcs):
         self.scroolLista = Scrollbar(self.frame_2, orient= 'vertical')
         self.listaCli.configure(yscroll = self.scroolLista.set)
         self.scroolLista.place(relx = 0.96 , rely = 0.1,relwidth = 0.04,relheight = 0.85)
+
+        self.listaCli.bind("<Double-1>", self.OnDoubleClick)
 
 
 
